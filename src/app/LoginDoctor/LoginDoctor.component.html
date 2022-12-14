@@ -1,0 +1,31 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="LoginDoctor.component.css" />
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="assets\img\portfolio\icono-doctor-login.png" alt="rocket_contact"/>
+            </div>
+            <form style="text-align: center;" method="post" [formGroup]="formlogin" (ngSubmit)="submit()">
+                <h3>Inicio de sesion(Doctores)</h3>
+               <div class="row">
+                    <div>
+                        <div class="form-group">
+                            <input type="text" name="txtUserName" formControlName="usuario" class="form-control" placeholder="Ingrese su nombre de usuario" value="" required/>
+                            <span *ngIf="this.formlogin.get('usuario')?.errors?.['required']">Se requiere el nombre de usuario</span>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" name="txtPassword" formControlName="password" class="form-control"  placeholder="Ingrese su contraseña" required>
+                          <span *ngIf="this.formlogin.get('password')?.errors?.['required']">Se requiere la contraseña</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmitLogin" class="btnLogin" value="Iniciar Sesion" />
+                        </div>
+                        <div>{{ resultado }}</div>
+                    </div>
+                </div>
+            </form>
+</div>

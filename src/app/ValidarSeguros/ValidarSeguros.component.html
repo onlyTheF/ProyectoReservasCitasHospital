@@ -1,0 +1,29 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="ValidarSeguros.component.css" />
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="assets\img\portfolio\verificacion.png" alt="rocket_contact"/>
+            </div>
+            <form style="text-align: center;" method="post" [formGroup]="formSeguro" (ngSubmit)="submit()">
+                <h3>Inicio de sesion(Doctores)</h3>
+               <div class="row">
+                    <div>
+                        <h2>Ingrese su codigo del seguro del hospital porfavor</h2>
+                        <p></p>
+                        <div class="form-group">
+                            <input type="text" name="txtUserName" formControlName="seguro" class="form-control" placeholder="Codigo del seguro" value="" required/>
+                            <span *ngIf="this.formSeguro.get('seguro')?.errors?.['required']">Se requiere el codigo de seguro</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnVerificarSeguro" class="btnLogin" value="Verificar Seguro" />
+                        </div>
+                        <div>{{ resultado }}</div>
+                    </div>
+                </div>
+            </form>
+</div>
