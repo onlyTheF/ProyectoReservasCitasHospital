@@ -12,10 +12,20 @@ import { FooterComponent } from './Footer/Footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatNativeDateModule} from '@angular/material/core';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { Reserva2Component } from './Reserva2/Reserva2.component';
+import { Reserva3Component } from './Reserva3/Reserva3.component';
+
+
 
 
 @NgModule({
-  declarations: [						
+  declarations: [								
     AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -23,13 +33,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       ReservaComponent,
       ValidarSegurosComponent,
       FooterComponent,
+      Reserva2Component,
+      Reserva3Component
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MatStepperModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    FormsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
