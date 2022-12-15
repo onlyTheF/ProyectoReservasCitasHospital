@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { CookieService } from 'ngx-cookie-service';
+import { LoginService } from '../Services/Login.service';
+
+
 
 @Component({
   selector: 'app-LoginDoctor',
@@ -8,8 +12,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class LoginDoctorComponent implements OnInit {
   resultado!: string;
+  id!:number;
 
-  constructor() { }
+  constructor(protected cookies:CookieService, private loginServices: LoginService) { }
 
   ngOnInit() {
   }
@@ -21,7 +26,6 @@ export class LoginDoctorComponent implements OnInit {
 
   submit(){
     if(this.formlogin.valid){
-      this.resultado = "Todo funciona correctamente";
     } else{
       this.resultado = "Datos invalidos en el formulario";
     }

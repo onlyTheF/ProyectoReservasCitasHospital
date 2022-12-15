@@ -10,13 +10,13 @@
                 <img src="assets\img\portfolio\verificacion.png" alt="rocket_contact"/>
             </div>
             <form style="text-align: center;" method="post" [formGroup]="formSeguro" (ngSubmit)="submit()">
-                <h3>Inicio de sesion(Doctores)</h3>
+                <h3>Inicio de sesion(Pacientes)</h3>
                <div class="row">
                     <div>
                         <h2>Ingrese su codigo del seguro del hospital porfavor</h2>
                         <p></p>
                         <div class="form-group">
-                            <input type="text" name="txtUserName" formControlName="seguro" class="form-control" placeholder="Codigo del seguro" value="" required/>
+                            <input type="text" name="txtUserName" formControlName="seguro" class="form-control" placeholder="Codigo del seguro" id="seguroIngresado" (keyup)="getoneUser($event)" required/>
                             <span *ngIf="this.formSeguro.get('seguro')?.errors?.['required']">Se requiere el codigo de seguro</span>
                         </div>
                         <div class="form-group">

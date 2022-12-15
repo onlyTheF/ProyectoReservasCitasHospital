@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-Reserva2',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Reserva2Component implements OnInit {
 
-  constructor() { }
+  constructor(private coockies: CookieService) { }
 
   ngOnInit() {
+    this.coockies.get("seguro")
   }
 
 }

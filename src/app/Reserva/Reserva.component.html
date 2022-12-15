@@ -14,16 +14,8 @@
 
 <div class="container">
   <h2>Servicios</h2>
-  <div class="list-group">
-    <a href="" class="list-group-item ">Cardiologia</a>
-    <a href="" class="list-group-item">Cirugia Cardiovascular</a>
-    <a href="" class="list-group-item">Cirugua General</a>
-    <a href="" class="list-group-item ">Dermatologia</a>
-    <a href="" class="list-group-item">Diabetologia</a>
-    <a href="" class="list-group-item">Ecografia</a>
-    <a href="" class="list-group-item">Endocronologia</a>
-    <a href="" class="list-group-item">Fisioterapia</a>
-
+  <div *ngFor="let esps of especialidades" class="list-group">
+    <button class="list-group-item" (click)="seleccionServicio(esps.especialidad, esps.idEspecialidad)">{{ esps.especialidad }}</button>
   </div>
 </div>
 

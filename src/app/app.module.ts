@@ -20,6 +20,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { Reserva2Component } from './Reserva2/Reserva2.component';
 import { Reserva3Component } from './Reserva3/Reserva3.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -49,7 +50,7 @@ import { Reserva3Component } from './Reserva3/Reserva3.component';
     MatButtonModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
